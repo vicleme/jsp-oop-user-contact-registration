@@ -1,0 +1,11 @@
+# NetBeans / Ant build output
+/build/
+/dist/
+/nbproject/private/
+
+# Packaged artifacts
+*.war
+
+# OS files
+.DS_Store
+Thumbs.db
