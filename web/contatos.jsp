@@ -6,6 +6,7 @@
 
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.edu.fatecpg.poo.Contato"%>
+<%@page import="br.edu.fatecpg.poo.Html"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     ArrayList<Contato> contatosList = (ArrayList) application.getAttribute("contatosList");
@@ -40,6 +41,7 @@
         <h2><a href="index.jsp">Voltar</a></h2>
         <h1>POO</h1>
         <h2>Contatos</h2>
+        <p><em>Aviso: demonstração. Os dados são públicos, compartilhados entre todos os visitantes e apagados quando o servidor reinicia. Não digite dados reais.</em></p>
         <form>
             Nome: <input type="text" name="name"/>
             E-mail: <input type="text" name="email"/>
@@ -59,9 +61,9 @@
             <tr>
                 <td><%= i %></td>
                 <% Contato c= contatosList.get(i); %>
-                <td><%= c.getName() %></td>
-                <td><%= c.getEmail() %></td>
-                <td><%= c.getTelefone() %></td>
+                <td><%= Html.escape(c.getName()) %></td>
+                <td><%= Html.escape(c.getEmail()) %></td>
+                <td><%= Html.escape(c.getTelefone()) %></td>
                 <td><form><input type="hidden" name="i" value="<%=i%>"/>
                 <input type="submit" name="remove" value="Remover"/></form></td>
             </tr>

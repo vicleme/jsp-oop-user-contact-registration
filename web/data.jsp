@@ -11,9 +11,9 @@
     hoje.mês = 9;
     hoje.ano = 2020;
     Data nasc = new Data();
-    nasc.dia = 18;
-    nasc.mês = 3;
-    nasc.ano = 2001;
+    nasc.dia = 15;
+    nasc.mês = 5;
+    nasc.ano = 1990;
 %>
 <!DOCTYPE html>
 <html>

@@ -18,7 +18,7 @@ It was built as **Assignment 5.2** of the *Object-Oriented Programming* course (
 | `pessoa.jsp` | `Pessoa` (Person): name, parents as nested `Pessoa` objects, birth date and a computed age |
 | `data.jsp` | `Data` (Date): a class with day, month and year fields |
 | `horario.jsp` | `Horario` (Time): a class with hour, minute and second fields |
-| `users.jsp` | `User` registration: add and remove users in a list |
+| `users.jsp` | `User` registration: add and remove users in a list (passwords are kept in memory but never displayed) |
 | `contatos.jsp` | `Contato` (Contact) registration: add and remove contacts; phone numbers are masked as `(##) #####-####` (mobile) or `(##) ####-####` (landline) |
 
 Class names come from the original Portuguese assignment: `Pessoa` = Person, `Data` = Date, `Horario` = Time, `Contato` = Contact. The user interface text is also in Brazilian Portuguese.
@@ -51,7 +51,7 @@ Then open <http://localhost:8080/Aula05_POO/>.
 
 ```
 .
-├── src/java/br/edu/fatecpg/poo/   # Java classes: Pessoa, Data, Horario, User, Contato, Main
+├── src/java/br/edu/fatecpg/poo/   # Java classes: Pessoa, Data, Horario, User, Contato, Html (escaping helper), Main
 ├── web/                           # JSP pages, WEB-INF/web.xml, META-INF/context.xml
 ├── nbproject/, build.xml, lib/    # NetBeans (Ant) project files and IDE libraries
 ├── Dockerfile                     # Run on Tomcat 9 without an IDE
@@ -64,8 +64,8 @@ Then open <http://localhost:8080/Aula05_POO/>.
 This is a classroom exercise, intentionally simple, and not meant for production use:
 
 - Data lives in memory (`application` scope): it is shared by all visitors and resets when the server restarts.
-- Passwords are stored in plain text and shown in the users table.
-- User input is printed without HTML escaping and is not validated.
+- Passwords are kept in plain text, with no hashing, and there is no authentication.
+- Output is HTML-escaped, but user input is not validated.
 - Pages use JSP scriptlets; real projects would use servlets/MVC and JSTL or a template engine.
 
 Because it needs a Java servlet container, it cannot be hosted on GitHub Pages or Netlify.

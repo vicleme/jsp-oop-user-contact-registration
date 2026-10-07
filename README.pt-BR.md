@@ -20,7 +20,7 @@ Foi feita como **Tarefa 5.2** da disciplina de *Programação Orientada a Objeto
 | `pessoa.jsp` | `Pessoa`: nome, pais como objetos `Pessoa` aninhados, data de nascimento e idade calculada |
 | `data.jsp` | `Data`: classe com campos de dia, mês e ano |
 | `horario.jsp` | `Horario`: classe com campos de hora, minuto e segundo |
-| `users.jsp` | Cadastro de `User`: adiciona e remove usuários de uma lista |
+| `users.jsp` | Cadastro de `User`: adiciona e remove usuários de uma lista (as senhas ficam na memória, mas nunca são exibidas) |
 | `contatos.jsp` | Cadastro de `Contato`: adiciona e remove contatos; telefones recebem máscara `(##) #####-####` (celular) ou `(##) ####-####` (fixo) |
 
 Os nomes das classes vêm do enunciado original em português. O texto da interface também está em português do Brasil.
@@ -53,7 +53,7 @@ Depois acesse <http://localhost:8080/Aula05_POO/>.
 
 ```
 .
-├── src/java/br/edu/fatecpg/poo/   # Classes Java: Pessoa, Data, Horario, User, Contato, Main
+├── src/java/br/edu/fatecpg/poo/   # Classes Java: Pessoa, Data, Horario, User, Contato, Html (escape de HTML), Main
 ├── web/                           # Páginas JSP, WEB-INF/web.xml, META-INF/context.xml
 ├── nbproject/, build.xml, lib/    # Arquivos do projeto NetBeans (Ant) e bibliotecas da IDE
 ├── Dockerfile                     # Executa no Tomcat 9 sem IDE
@@ -66,8 +66,8 @@ Depois acesse <http://localhost:8080/Aula05_POO/>.
 Este é um exercício de sala de aula, propositalmente simples, e não serve para uso em produção:
 
 - Os dados ficam em memória (escopo `application`): são compartilhados entre todos os visitantes e somem quando o servidor reinicia.
-- As senhas são guardadas em texto puro e exibidas na tabela de usuários.
-- As entradas são impressas sem escape de HTML e não são validadas.
+- As senhas ficam em texto puro, sem hash, e não há autenticação.
+- A saída tem escape de HTML, mas as entradas não são validadas.
 - As páginas usam scriptlets JSP; em projetos reais, o recomendado é servlets/MVC e JSTL ou um motor de templates.
 
 Como exige um contêiner de servlets Java, não pode ser hospedado no GitHub Pages nem no Netlify.

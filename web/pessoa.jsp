@@ -12,15 +12,15 @@
     Pessoa eu;
     eu = new Pessoa();
     eu.pai = new Pessoa();
-    eu.pai.nome = "Eduardo";
+    eu.pai.nome = "Carlos";
     eu.pai.pai = new Pessoa();
-    eu.pai.pai.nome = "Avaré";
+    eu.pai.pai.nome = "Antônio";
     eu.pai.mãe=new Pessoa();
-    eu.pai.mãe.nome="Diva";
+    eu.pai.mãe.nome="Helena";
     eu.mãe = new Pessoa();
-    eu.mãe.nome = "Marisa";
-    eu.nome="Victor";
-    eu.nascimento = new Date(101,03,18);
+    eu.mãe.nome = "Marta";
+    eu.nome="Alex";
+    eu.nascimento = new Date(90,4,15);
 %>
 <!DOCTYPE html>
 <html>
