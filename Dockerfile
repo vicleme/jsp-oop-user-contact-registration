@@ -1,7 +1,7 @@
 # Runs the app on Apache Tomcat 9 without needing NetBeans or Ant.
 # Build: docker build -t jsp-oop-user-contact-registration .
 # Run:   docker run --rm -p 8080:8080 jsp-oop-user-contact-registration
-# Open:  http://localhost:8080/Aula05_POO/
+# Open:  http://localhost:8080/Aula05_POO/index.jsp
 FROM tomcat:9.0-jdk11-temurin
 
 RUN rm -rf /usr/local/tomcat/webapps/*

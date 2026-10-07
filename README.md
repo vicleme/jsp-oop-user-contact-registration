@@ -10,6 +10,12 @@ A small Java web application written with **JSP** to practice **Object-Oriented 
 
 It was built as **Assignment 5.2** of the *Object-Oriented Programming* course (Analysis and Systems Development, ADS) at **Fatec Praia Grande**, 2020/2.
 
+## Live demo
+
+**<https://jsp-oop-user-contact-registration.onrender.com/Aula05_POO/index.jsp>**
+
+Hosted on Render's free plan, running the included Docker image. The service sleeps after about 15 minutes without traffic, so the first request may take a while. Data is kept in memory, is public and shared by all visitors, and is erased on every restart, so please don't enter real information.
+
 ## Features
 
 | Page | What it shows |
@@ -22,6 +28,14 @@ It was built as **Assignment 5.2** of the *Object-Oriented Programming* course (
 | `contatos.jsp` | `Contato` (Contact) registration: add and remove contacts; phone numbers are masked as `(##) #####-####` (mobile) or `(##) ####-####` (landline) |
 
 Class names come from the original Portuguese assignment: `Pessoa` = Person, `Data` = Date, `Horario` = Time, `Contato` = Contact. The user interface text is also in Brazilian Portuguese.
+
+## Screenshots
+
+<table>
+<tr><td align="center"><a href="docs/screenshots/home.png"><img src="docs/screenshots/home.png" alt="Home page with links to each example" width="380"></a><br><sub>Home menu</sub></td><td align="center"><a href="docs/screenshots/person.png"><img src="docs/screenshots/person.png" alt="Person page showing age and relatives" width="380"></a><br><sub><code>Pessoa</code> page</sub></td></tr>
+<tr><td align="center"><a href="docs/screenshots/date.png"><img src="docs/screenshots/date.png" alt="Date page" width="380"></a><br><sub><code>Data</code> page</sub></td><td align="center"><a href="docs/screenshots/time.png"><img src="docs/screenshots/time.png" alt="Time page" width="380"></a><br><sub><code>Horario</code> page</sub></td></tr>
+<tr><td align="center"><a href="docs/screenshots/users.png"><img src="docs/screenshots/users.png" alt="User registration page with add and remove" width="380"></a><br><sub>User registration</sub></td><td align="center"><a href="docs/screenshots/contacts.png"><img src="docs/screenshots/contacts.png" alt="Contact registration page with masked phone numbers" width="380"></a><br><sub>Contact registration</sub></td></tr>
+</table>
 
 ## Tech stack
 
@@ -38,14 +52,14 @@ docker build -t jsp-oop-user-contact-registration .
 docker run --rm -p 8080:8080 jsp-oop-user-contact-registration
 ```
 
-Then open <http://localhost:8080/Aula05_POO/>.
+Then open <http://localhost:8080/Aula05_POO/index.jsp>.
 
 ### Option 2: NetBeans
 
 1. Install a JDK (11 or newer) and Apache Tomcat 9.
 2. In NetBeans (with Java Web and EE support; the project was created with 11.3), choose **File → Open Project** and select this folder.
 3. Register your Tomcat under **Services → Servers** if prompted.
-4. Click **Run**. The app opens at <http://localhost:8080/Aula05_POO/>.
+4. Click **Run**. The app opens at <http://localhost:8080/Aula05_POO/index.jsp>.
 
 ## Project structure
 
@@ -54,7 +68,9 @@ Then open <http://localhost:8080/Aula05_POO/>.
 ├── src/java/br/edu/fatecpg/poo/   # Java classes: Pessoa, Data, Horario, User, Contato, Html (escaping helper), Main
 ├── web/                           # JSP pages, WEB-INF/web.xml, META-INF/context.xml
 ├── nbproject/, build.xml, lib/    # NetBeans (Ant) project files and IDE libraries
+├── docs/screenshots/              # Images used in this README
 ├── Dockerfile                     # Run on Tomcat 9 without an IDE
+├── render.yaml                    # Render service settings for the live demo
 ├── LICENSE
 └── README.md / README.pt-BR.md
 ```
@@ -68,7 +84,7 @@ This is a classroom exercise, intentionally simple, and not meant for production
 - Output is HTML-escaped, but user input is not validated.
 - Pages use JSP scriptlets; real projects would use servlets/MVC and JSTL or a template engine.
 
-Because it needs a Java servlet container, it cannot be hosted on GitHub Pages or Netlify.
+Because it needs a Java servlet container, it cannot run on GitHub Pages or Netlify; the live demo runs in Docker on Render instead.
 
 ## License
 

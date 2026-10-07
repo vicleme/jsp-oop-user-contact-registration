@@ -1,0 +1,11 @@
+# Render service settings for the live demo (Docker web service, free plan).
+# The service was created in the Render dashboard with these same values.
+services:
+  - type: web
+    name: jsp-oop-user-contact-registration
+    runtime: docker
+    plan: free
+    healthCheckPath: /Aula05_POO/index.jsp
+    envVars:
+      - key: PORT
+        value: "8080"

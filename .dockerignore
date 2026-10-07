@@ -4,3 +4,5 @@ dist
 nbproject
 lib
 README*.md
+docs
+render.yaml
